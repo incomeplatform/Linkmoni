@@ -9,17 +9,21 @@
       font-family: "Inter", sans-serif;
     }
   </style>
+  <meta property="og:image" content="https://example.com/linkphoto1" />
+  <meta property="og:image:secure_url" content="https://example.com/linkphoto1" />
+  <meta property="og:image:alt" content="Thumbnail Image Description" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <!-- Update the "https://example.com/linkphoto1" with the actual URL of your image -->
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 </head>
 
 <body class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
-   <div id="imageContainer">
-        <img id="displayedImage" src="linkphoto" alt="Displayed Image">
-    </div>
   <div class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1">
     <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
       <div>
-        <img src="linkphoto.jpg" class="w-32 mx-auto" />
+        <img src="linkphoto1" class="w-32 mx-auto" />
       </div>
       <div class="mt-12 flex flex-col items-center">
         <h1 class="text-2xl xl:text-3xl font-extrabold">
@@ -29,20 +33,19 @@
           <div class="flex flex-col items-center">
            
             <a href="page.html" class="btn-link">
-                <button
-                  class="w-full max-w-xs font-bold shadow-sm rounded-lg py-5 px-8 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5"
-  
-                >
-                  <div class="bg-white p-1 rounded-full">
-                    <svg style="color: blue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"> <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" fill="blue"></path> </svg>
-                  </div>
-                  <span class="ml-4">
-                    Sign in with Facebook
-                  </span>
-                </button>
-              </a>
-               </div>
-<br>
+              <button
+                class="w-full max-w-xs font-bold shadow-sm rounded-lg py-5 px-8 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5"
+              >
+                <div class="bg-white p-1 rounded-full">
+                  <svg style="color: blue" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"> <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" fill="blue"></path> </svg>
+                </div>
+                <span class="ml-4">
+                  Sign in with Facebook
+                </span>
+              </button>
+            </a>
+          </div>
+          <br>
           <div class="my-12 border-b text-center">
             <div class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
               Or sign in with e-mail
